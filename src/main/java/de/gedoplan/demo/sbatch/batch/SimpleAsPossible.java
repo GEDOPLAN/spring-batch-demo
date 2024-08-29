@@ -28,7 +28,6 @@ public class SimpleAsPossible {
     public Step singleStep(JobRepository jobRepository, PlatformTransactionManager ptm) {
         return new StepBuilder("singleStep", jobRepository)
                 .tasklet(singleStepTasklet(), ptm)
-                .allowStartIfComplete(true)
                 .build();
     }
 
